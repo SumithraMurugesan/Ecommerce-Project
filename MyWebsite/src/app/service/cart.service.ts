@@ -10,7 +10,7 @@ export class CartService {
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
 
-  constructor() { }
+  constructor() { /* TODO document why this constructor is empty */  }
   getProducts() {
     return this.productList.asObservable();
   }

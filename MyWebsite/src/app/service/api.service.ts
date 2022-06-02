@@ -29,7 +29,7 @@ export class ApiService {
     return this.http.post<any>('http://localhost:8000/postdata2/', formData)
   }
 
-  add(db: String, doc: object): Observable<{}> {
+  add(db: string, doc: object): Observable<{}> {
     console.log(doc);
     const url = this.url + db;
     return this.http.post(url, doc, this.httpOptions)
@@ -39,7 +39,6 @@ export class ApiService {
     return this.http.get<any>('http://localhost:8000/getdata/' + id);
   }
   findApi(selectorObject: any, dataBase: string) {
-    // const url = this.url+ dataBase + '/_find'
     const url = `${this.url + dataBase}/_find`
     const dataObject = {
       selector: selectorObject

@@ -3,6 +3,7 @@
         <div class="card-table">
             <div class="cart-product">
                 <table class="table table-responsive">
+                    <caption>Your OrderDetails</caption>
                     <thead>
                         <tr>
                             <th>Sr.No</th>
@@ -21,12 +22,12 @@
                             <td>{{item.title}}</td>
                             <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                             <td style="width: 25%;">{{item.description}}</td>
-                            <th style="width: 12%;">{{item.price}}</th>
+                            <td style="width: 12%;">{{item.price}}</td>
                             <td style="width: 12%;">{{item.quantity}}</td>
                             <td style="width: 12%;">{{item.total}}</td>
                             <td>
-                                <button (click)="removeItem(item)" class="btn btn-danger"><i
-                                        class="fas fa-trash-alt"></i></button>
+                                <button (click)="removeItem(item)" class="btn btn-danger"><em
+                                        class="fas fa-trash-alt"></em></button>
                             </td>
                         </tr>
                         <tr>

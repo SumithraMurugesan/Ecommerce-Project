@@ -6,7 +6,7 @@
                     <div class="col-50">
                         <h3>Billing Address</h3>
 
-                        <label for="fname" style="color:red;"><i class="fa fa-user"></i> Full Name</label>
+                        <label for="fname" style="color:red;"><em class="fa fa-user"></em> Full Name</label>
                         <input type="text" id="fname" name="firstname" placeholder="John M. Doe"
                             formControlName="firstName">
                         <div class="help-block text-danger" *ngIf="firstName.touched">
@@ -16,21 +16,21 @@
 
                         </div>
 
-                        <label for="email"><i class="fa fa-envelope"></i> Email</label>
+                        <label for="email"><em class="fa fa-envelope"></em> Email</label>
                         <input type="text" id="email" name="email" placeholder="john@example.com"
                             formControlName="email">
                         <div class="help-block text-danger" *ngIf="email.touched">
                             <span *ngIf="email.errors?.required"> Email is required!!! </span>
                         </div>
 
-                        <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+                        <label for="adr"><em class="fa fa-address-card-o"></em> Address</label>
                         <input type="text" id="adr" name="address" placeholder="542 W. 15th Street"
                             formControlName="address">
                         <div class="help-block text-danger" *ngIf="address.touched">
                             <span *ngIf="address.errors?.required"> address is required!!! </span>
                         </div>
 
-                        <label for="city"><i class="fa fa-institution"></i> City</label>
+                        <label for="city"><em class="fa fa-institution"></em> City</label>
                         <input type="text" id="city" name="city" placeholder="New York" formControlName="city">
                         <div class="help-block text-danger" *ngIf="city.touched">
                             <span *ngIf="city.errors?.required"> city is required!!! </span>
@@ -59,10 +59,10 @@
                         <h3>Payment</h3>
                         <label for="fname">Accepted Cards</label>
                         <div class="icon-container">
-                            <i class="fa fa-cc-visa" style="color:navy;"></i>
-                            <i class="fa fa-cc-amex" style="color:blue;"></i>
-                            <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                            <i class="fa fa-cc-discover" style="color:orange;"></i>
+                            <em class="fa fa-cc-visa" style="color:navy;"></em>
+                            <em class="fa fa-cc-amex" style="color:blue;"></em>
+                            <em class="fa fa-cc-mastercard" style="color:red;"></em>
+                            <em class="fa fa-cc-discover" style="color:orange;"></em>
                         </div>
 
                         <label for="cname">Name on Card</label>
