@@ -1,0 +1,56 @@
+section {
+    padding:2rem 9%;
+}
+
+a {
+    text-decoration: none;
+    appearance: none;
+}
+
+.admin .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+    gap: 1rem;
+}
+
+.admin .box-container .box {
+    border-radius: 0.5rem;
+    background: #333;
+    text-align: center;
+    padding: 1rem;
+}
+
+.admin .box-container .box:hover {
+    border-radius: 0.5rem;
+    /* background: #333; */
+    text-align: center;
+    padding: 2.5rem;
+    background: var(--main-color);
+}
+
+.admin .box-container .box h3:hover {
+    color: black;
+    font-size: 2rem;
+}
+
+.admin .box-container .box i {
+    height: 6rem;
+    width: 4rem;
+    line-height: 6rem;
+    border-radius: 50%;
+    font-size: 2.5rem;
+    background: var(--main-color);
+    color: #fff;
+}
+
+.admin .box-container .box h3 {
+    font-size: 2rem;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.admin .box-container .box p {
+    font-size: 1.4rem;
+    color: #eee;
+    line-height: 1.8;
+}

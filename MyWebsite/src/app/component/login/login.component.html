@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="main">
+        <input type="checkbox" id="chk" aria-hidden="true">
+
+        <div class="signup">
+            <form [formGroup]="signUpForm" (ngSubmit)="signUp(this.signUpForm.value)">
+                <label for="chk" aria-hidden="true">Sign up</label>
+                <input id="userName" class="form-control" formControlName="userName" placeholder="userName Required"
+                    required />
+                <div class="help-block text-danger" *ngIf="userName.touched">
+                    <span *ngIf="userName.errors?.required">
+                        User Name is REQUIRED!!!
+                    </span>
+                </div>
+                <input id="email" class="form-control" formControlName="email" placeholder="Email (required)"
+                    required />
+                <div class="help-block text-danger" *ngIf="email.touched">
+                    <span *ngIf="email.errors?.required"> Email is REQUIRED!!! </span>
+                </div>
+                <input type="password" id="password" class="form-control" formControlName="password" required />
+                <div class="help-block text-danger" *ngIf="password.touched">
+                    <span *ngIf="password.errors?.required"> password is REQUIRED!!! </span>
+                </div>
+                <button>Sign up</button>
+            </form>
+        </div>
+
+        <div class="login">
+            <form [formGroup]="loginForm" (ngSubmit)="login(this.loginForm.value)">
+
+                <label for="chk" aria-hidden="true">Login</label>
+                <input id="email2" class="form-control" formControlName="email2" placeholder="enter your emailId"
+                    required />
+                <div class="help-block text-danger" *ngIf="email2.touched">
+                    <span *ngIf="email2.errors?.required"> Email is REQUIRED!!! </span>
+                </div>
+                <input type="password2" id="password2" class="form-control" formControlName="password2"
+                    placeholder="enter your password" required />
+                <div class="help-block text-danger" *ngIf="password2.touched">
+                    <span *ngIf="password2.errors?.required"> password is REQUIRED!!! </span>
+                </div>
+                <button>Login</button>
+            </form>
+        </div>
+    </div>
+</div>
