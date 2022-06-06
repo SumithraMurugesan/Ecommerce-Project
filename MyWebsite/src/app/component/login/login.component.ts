@@ -47,9 +47,11 @@ export class LoginComponent implements OnInit {
 
     });
   }
-
   ngOnInit(): void {
+    throw new Error('Method not implemented.');
   }
+
+ 
   get userName() {
     return this.signUpForm.get('userName')!;
   }
