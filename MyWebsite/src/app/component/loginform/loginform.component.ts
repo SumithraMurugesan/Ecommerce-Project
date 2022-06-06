@@ -30,11 +30,7 @@ export class LoginFormComponent implements OnInit {
 
   saving(Formvalue: any) {
 
-    const login = {
-      userid: Formvalue.userid,
-      password: Formvalue.password,
-      type: "admin",
-    }
+   
     console.log("from form", Formvalue);
     this.api.adminData(Formvalue).subscribe((data) => {
       if (data.docs.length > 0) {

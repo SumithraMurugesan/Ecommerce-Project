@@ -148,8 +148,8 @@ export class CheckoutFormComponent implements OnInit {
           "price": element['price'],
           "type": "orderInfo"
         }
-        taskList.push(this.api.add("testdb", orderInfo).subscribe((res: any) => {
-          return res
+        taskList.push(this.api.add("testdb", orderInfo).subscribe((_res: any) => {
+          return _res
         }))
 
       });

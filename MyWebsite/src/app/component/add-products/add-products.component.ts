@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../service/api.service';
 
@@ -7,7 +7,7 @@ import { ApiService } from '../../service/api.service';
   templateUrl: './add-products.component.html',
   styleUrls: ['./add-products.component.css']
 })
-export class AddProductsComponent implements OnInit {
+export class AddProductsComponent  {
   addProduct: FormGroup;
 
 
@@ -36,8 +36,7 @@ export class AddProductsComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  
   get title() {
     return this.addProduct.get('title')!;
   }
