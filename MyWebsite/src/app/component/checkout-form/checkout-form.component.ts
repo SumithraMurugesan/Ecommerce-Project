@@ -3,6 +3,7 @@ import { FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
 import { ApiService } from '../../service/api.service'
 import { CartComponent } from '../cart/cart.component';
 import { CartService } from '../../service/cart.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -35,7 +36,7 @@ export class CheckoutFormComponent implements OnInit {
   grandTotal: any;
 
 
-  constructor(private fb: FormBuilder, private cartService: CartService, private api: ApiService, private cart: CartComponent) {
+  constructor(private fb: FormBuilder, private cartService: CartService, private api: ApiService, private cart: CartComponent, private router: Router) {
     this.checkoutForm = this.fb.group({
       firstName: [this.userRecord.firstName],
       email: [this.userRecord.email],
@@ -154,7 +155,8 @@ export class CheckoutFormComponent implements OnInit {
       });
       Promise.all(taskList).then(result => {
         console.log(result)
-        alert("Your product was created successfully!");
+        alert("Your order Placed Successfully!");
+        this.router.navigate(['orderplaced'])
       })
 
     }, rej => {
@@ -162,15 +164,7 @@ export class CheckoutFormComponent implements OnInit {
     });
 
   }
-  orderDetails() {
-
-    let data = {
-      selector: {
-        "type": "order",
-        "user": this.userData.id,
-      }
-    }
-  }
-
 }
+
+
 

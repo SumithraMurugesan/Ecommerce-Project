@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../service/api.service';
-import { Observable } from 'rxjs'
+
 @Component({
   selector: 'app-add-products',
   templateUrl: './add-products.component.html',
@@ -57,7 +57,7 @@ export class AddProductsComponent implements OnInit {
 
 
 
-  addProducts(Formvalue: any) {//to add product
+  addProducts(Formvalue: any) {
     const userData = JSON.parse(localStorage.getItem('obj1') || '{}');
     console.log(userData);
 
@@ -79,16 +79,7 @@ export class AddProductsComponent implements OnInit {
       alert("opps" + rej);
     });
 
-  }
-  ProductDetails() { //add selector
-
-    let data = {
-      selector: {
-        "type": "product",
-      }
-    }
-  }
-
-
+  
+} 
 }
 

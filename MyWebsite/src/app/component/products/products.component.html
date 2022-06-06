@@ -60,9 +60,8 @@
 
                 <div class="showcase-banner">
 
-                    <img src="{{item.image}}" alt="Mens Winter Leathers Jackets" width="300"
-                        class="product-img default">
-                    <img src="{{item.image}}" alt="Mens Winter Leathers Jackets" width="300" class="product-img hover">
+                    <img src="{{item.image}}" alt="Mens Winter Leathers Jackets" class="product-img default">
+                    <img src="{{item.image}}" alt="Mens Winter Leathers Jackets" width="100%" class="product-img hover">
 
 
                     <div class="showcase-actions">
@@ -72,7 +71,7 @@
                         </button>
 
                         <button class="btn-action" routerLink="/productView">
-                            <ion-icon name="eye-outline"></ion-icon>
+                            <ion-icon name="eye-outline" (click)=viewProduct(item._id)></ion-icon>
                         </button>
 
                         <button class="btn-action">

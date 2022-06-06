@@ -9,19 +9,30 @@ export class CartService {
   public cartItemList: any = []
   public productList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
+  public viewProducts: any = []
+  viewProductList = new BehaviorSubject<any>([]);
 
-  constructor() { /* TODO document why this constructor is empty */  }
+  constructor() { /* TODO document why this constructor is empty */ }
   getProducts() {
     return this.productList.asObservable();
   }
+  viewProduct(product: any) {
+    this.viewProducts = [];
+    this.viewProducts.push(product);
+    this.viewProductList.next(this.viewProducts);
+  }
+  display() {
+    return this.viewProductList.asObservable();
 
- 
+  }
+
   addtoCart(product: any) {
     this.cartItemList.push(product);
     this.productList.next(this.cartItemList);
     this.getTotalPrice();
     console.log(this.cartItemList)
   }
+
   getTotalPrice(): number {
     let grandTotal = 0;
     this.cartItemList.map((a: any) => {

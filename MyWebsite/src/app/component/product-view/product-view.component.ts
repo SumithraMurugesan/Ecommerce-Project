@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ApiService } from 'src/app/service/api.service';
+import { CartService } from 'src/app/service/cart.service';
 
 @Component({
   selector: 'app-product-view',
@@ -6,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-view.component.css']
 })
 export class ProductViewComponent implements OnInit {
+  products: any;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit(): void {
+    this.cartService.display()
+      .subscribe((res: any) => {
+        this.products = res;
+      })
+  }
+  addtocart(item: any) {
+    console.log("orderlist", item);
+    this.cartService.addtoCart(item);
   }
 
+
 }
+

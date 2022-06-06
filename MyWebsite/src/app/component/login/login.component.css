@@ -13,7 +13,7 @@
 .main {
     width: 350px;
     height: 500px;
-    background: red;
+    background: hsl(353, 100%, 78%);
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 5px 20px 50px #000;
@@ -60,7 +60,7 @@ button {
     justify-content: center;
     display: block;
     color: #fff;
-    background: #573b8a;
+    background: hsl(0, 0%, 60%);
     font-size: 1em;
     font-weight: bold;
     margin-top: 20px;
@@ -72,7 +72,7 @@ button {
 }
 
 button:hover {
-    background: #6d44b8;
+    background: hsl(0, 0%, 60%);;
 }
 
 .login {
@@ -84,7 +84,7 @@ button:hover {
 }
 
 .login label {
-    color: #573b8a;
+    color: hsl(0, 0%, 60%);
     transform: scale(.6);
 }
 

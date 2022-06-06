@@ -5,11 +5,10 @@
 
         <div class="showcase-container">
 
-            <div class="showcase">
+            <div class="showcase" *ngFor="let item of products">
 
                 <div class="showcase-banner">
-                    <img src="./assets/images/products/jewellery-1.jpg" alt="Rose Gold diamonds Earring"
-                        class="showcase-img">
+                    <img src="{{item.image}}" alt="Rose Gold diamonds Earring" class="showcase-img" width="100%">
                 </div>
 
                 <div class="showcase-content">
@@ -23,20 +22,19 @@
                     </div>
 
                     <h3 class="showcase-title">
-                        <a href="#" class="showcase-title">Rose Gold diamonds Earring</a>
+                        <a href="#" class="showcase-title">{{item.title}}</a>
                     </h3>
 
                     <p class="showcase-desc">
-                        Lorem ipsum dolor sit amet consectetur Lorem ipsum
-                        dolor dolor sit amet consectetur Lorem ipsum dolor
+                        {{item.description}}
                     </p>
 
                     <div class="price-box">
-                        <p class="price">$1990.00</p>
-                        <del>$2000.00</del>
+                        <p class="price">{{item.price}}</p>
+                        <del>$75</del>
                     </div>
 
-                    <button class="add-cart-btn">add to cart</button>
+                    <button class="add-cart-btn" (click)=addtocart(item)>add to cart</button>
 
                     <div class="showcase-status">
                         <div class="wrapper">

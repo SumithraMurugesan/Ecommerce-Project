@@ -23,6 +23,7 @@ import { HttpCallInterceptor } from './interceptor/interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './component/login/login.component';
 import { LoginFormComponent } from './component/loginform/loginform.component';
+import { OrderPlacedComponent } from './order-placed/order-placed.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { LoginFormComponent } from './component/loginform/loginform.component';
     AddProductsComponent,
     ProductsComponent,
     LoginFormComponent,
-    LoginComponent
+    LoginComponent,
+    OrderPlacedComponent
   ],
   imports: [
     BrowserModule,

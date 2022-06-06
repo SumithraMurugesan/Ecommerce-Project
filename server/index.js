@@ -16,12 +16,12 @@ app.use(bodyParser.json());
 
 
 
-app.post('/postdata2',function (req,res) {
+app.post('/postdata2',function (req, res) {
   var userObject= {
     userName:req.body.userName,
     email:req.body.email,
     password:req.body.password,
-    type:"user"
+    type:'user'
   }
   console.log("data from angular",userObject);
   dbconnection.testdb.insert(userObject).then((data)=>{
@@ -52,7 +52,7 @@ app.get('/getdata/:id', (req, res) => {
   var object = {
     selector: {
       email: req.params.id,
-      type:"user"
+      type:'user'
     },
   };
 

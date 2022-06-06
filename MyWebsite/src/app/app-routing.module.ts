@@ -12,6 +12,7 @@ import { NewArrivalsComponent } from './component/new-arrivals/new-arrivals.comp
 import { ProductViewComponent } from './component/product-view/product-view.component';
 import { ProductsComponent } from './component/products/products.component';
 import { TrendingComponent } from './component/trending/trending.component';
+import { OrderPlacedComponent } from './order-placed/order-placed.component';
 
 
 
@@ -29,7 +30,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path:'loginform',component:LoginFormComponent},
   {path:'admin',component:AdminComponent},
-  {path:'addproduct',component:AddProductsComponent}
+  {path:'addproduct',component:AddProductsComponent},
+  {path:'orderplaced',component:OrderPlacedComponent}
 ];
 
 

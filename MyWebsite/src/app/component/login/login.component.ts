@@ -23,7 +23,6 @@ export class LoginComponent implements OnInit {
     userName: '',
     email: '',
     password: '',
-    type: 'user'
 
   };
   userRecord2: any = {
@@ -31,6 +30,7 @@ export class LoginComponent implements OnInit {
     password2: '',
 
   };
+  toastr: any;
 
   constructor(private fb: FormBuilder, private api: ApiService, private router: Router) {
 
@@ -39,7 +39,6 @@ export class LoginComponent implements OnInit {
       userName: [this.userRecord1.userName],
       email: [this.userRecord1.email],
       password: [this.userRecord1.password],
-      type: [this.userRecord2.type]
 
     });
     this.loginForm = this.fb.group({
@@ -82,7 +81,9 @@ export class LoginComponent implements OnInit {
     console.log(Formvalue.email2);
     this.api.login_get(Formvalue.email2).subscribe((data) => {
       if (data.docs[0].email == Formvalue.email2) {
+
         this.router.navigate(['/home']);
+
         alert("data verified");
       }
       else {

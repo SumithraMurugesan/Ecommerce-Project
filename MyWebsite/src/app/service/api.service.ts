@@ -34,6 +34,11 @@ export class ApiService {
     const url = this.url + db;
     return this.http.post(url, doc, this.httpOptions)
   }
+  getDataById(database: string, id: any) {
+    const url = this.url + database + '/' + id;
+    console.log(id);
+    return this.http.get(url, this.httpOptions);
+  }
 
   login_get(id: any) {
     return this.http.get<any>('http://localhost:8000/getdata/' + id);

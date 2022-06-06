@@ -32,12 +32,12 @@
                 <input id="email2" class="form-control" formControlName="email2" placeholder="enter your emailId"
                     required />
                 <div class="help-block text-danger" *ngIf="email2.touched">
-                    <span *ngIf="email2.errors?.required"> Email is REQUIRED!!! </span>
+                    <span *ngIf="email2.errors?.required"> email is required!!! </span>
                 </div>
                 <input type="password2" id="password2" class="form-control" formControlName="password2"
                     placeholder="enter your password" required />
                 <div class="help-block text-danger" *ngIf="password2.touched">
-                    <span *ngIf="password2.errors?.required"> password is REQUIRED!!! </span>
+                    <span *ngIf="password2.errors?.required"> password is required!!! </span>
                 </div>
                 <button>Login</button>
             </form>

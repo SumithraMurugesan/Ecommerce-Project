@@ -14,6 +14,7 @@ export class ProductsComponent implements OnInit {
 
   public filterCategory: any
   searchKey: string = "";
+  ProductView: any;
   constructor(private api: ApiService, private cartService: CartService) { }
 
   ngOnInit(): void {
@@ -25,7 +26,7 @@ export class ProductsComponent implements OnInit {
         console.log(res);
         this.productList = this.filterCategory = this.products = res['docs'];
         console.log("filter", this.filterCategory);
-        
+
         this.productList.forEach((a: any) => {
 
           Object.assign(a, { quantity: 1, total: a.price });
@@ -41,6 +42,14 @@ export class ProductsComponent implements OnInit {
     this.cartService.addtoCart(item);
 
   }
+  viewProduct(id: any) {
+    this.api.getDataById("testdb", id).subscribe((res: any) => {
+      console.log(res);
+      this.ProductView=res;
+      this.cartService.viewProduct(this.ProductView);
+    })
+  }
+
 
   filter(category: string) {
     this.filterCategory = this.productList
