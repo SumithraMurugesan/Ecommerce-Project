@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 
 
 
-app.post('/postdata2',function (req, res) {
-  var userObject= {
+app.post('/postdata2',function (req, _res) {
+  const userObject= {
     userName:req.body.userName,
     email:req.body.email,
     password:req.body.password,
@@ -26,10 +26,12 @@ app.post('/postdata2',function (req, res) {
   console.log("data from angular",userObject);
   dbconnection.testdb.insert(userObject).then((data)=>{
     console.log("data inserted successfully ",data);
+      res.send(data);
   })
+  
 });
-app.post("/postdata4", function (req, res) {
-  var adminObject = {
+app.post("/postdata4", function (req, _res) {
+  const adminObject = {
     userid: req.body.userid,
     password: req.body.password,
     type:"admin"
@@ -46,10 +48,10 @@ app.post("/postdata4", function (req, res) {
    res.send(data);
   });
 });
-app.get('/getdata/:id', (req, res) => {
+app.get('/getdata/:id', (req, _res) => {
   console.log('email:', req.params.id);
   console.log('password:', req.params.id);
-  var object = {
+  const object = {
     selector: {
       email: req.params.id,
       type:'user'
