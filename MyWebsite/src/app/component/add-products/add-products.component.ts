@@ -79,7 +79,6 @@ export class AddProductsComponent implements OnInit {
       alert("opps" + rej);
     });
 
-  
-} 
+  }
 }
 

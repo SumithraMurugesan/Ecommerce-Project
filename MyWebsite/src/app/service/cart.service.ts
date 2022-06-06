@@ -12,7 +12,7 @@ export class CartService {
   public viewProducts: any = []
   viewProductList = new BehaviorSubject<any>([]);
 
-  constructor() { /* TODO document why this constructor is empty */ }
+  constructor() { }
   getProducts() {
     return this.productList.asObservable();
   }

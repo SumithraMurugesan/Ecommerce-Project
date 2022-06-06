@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, Validators, FormBuilder, NgForm } from '@angular/forms';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../service/api.service'
 import { CartComponent } from '../cart/cart.component';
 import { CartService } from '../../service/cart.service';
