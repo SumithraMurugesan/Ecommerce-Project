@@ -25,7 +25,6 @@ export class AddProductsComponent {
 
 
   };
-  userData: any;
   constructor(private fb: FormBuilder, private api: ApiService, private toastr: ToastrService, private router:Router) {
     this.addProduct = this.fb.group({
       title: [this.userRecord.title],
@@ -60,8 +59,6 @@ export class AddProductsComponent {
 
 
   addProducts(Formvalue: any) {
-    const userData = JSON.parse(localStorage.getItem('obj1') || '{}');
-    console.log(userData);
 
     const productlist = {
       "title": Formvalue.title,

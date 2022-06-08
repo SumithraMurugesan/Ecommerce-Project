@@ -106,7 +106,8 @@ export class LoginComponent {
 
   login(Formvalue: any) {
     let datas = {
-      email2: Formvalue.email2
+      email: Formvalue.email2,
+      password: Formvalue.password2
     }
     console.log(datas);
     this.api.login_get(datas).subscribe((data) => {
@@ -125,6 +126,7 @@ export class LoginComponent {
         }
       }
     })
+    localStorage.clear();
   }
 }
 
