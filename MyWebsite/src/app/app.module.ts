@@ -24,6 +24,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { LoginComponent } from './component/login/login.component';
 import { LoginFormComponent } from './component/loginform/loginform.component';
 import { OrderPlacedComponent } from './order-placed/order-placed.component';
+import { ViewOrderDetailsComponent } from './view-order-details/view-order-details.component';
+import { ViewOrderProductsComponent } from './view-order-products/view-order-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +44,9 @@ import { OrderPlacedComponent } from './order-placed/order-placed.component';
     ProductsComponent,
     LoginFormComponent,
     LoginComponent,
-    OrderPlacedComponent
+    OrderPlacedComponent,
+    ViewOrderDetailsComponent,
+    ViewOrderProductsComponent
   ],
   imports: [
     BrowserModule,

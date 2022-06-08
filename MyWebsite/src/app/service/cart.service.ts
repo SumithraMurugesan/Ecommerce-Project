@@ -23,7 +23,6 @@ export class CartService {
   }
   display() {
     return this.viewProductList.asObservable();
-
   }
 
   addtoCart(product: any) {

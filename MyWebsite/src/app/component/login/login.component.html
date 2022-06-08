@@ -5,23 +5,24 @@
         <div class="signup">
             <form [formGroup]="signUpForm" (ngSubmit)="signUp(this.signUpForm.value)">
                 <label for="chk" aria-hidden="true">Sign up</label>
-                <input id="userName" class="form-control" formControlName="userName" placeholder="userName Required"
+                <input id="userName" class="form-control" formControlName="userName" placeholder="enter your username"
                     required />
                 <div class="help-block text-danger" *ngIf="userName.touched">
                     <span *ngIf="userName.errors?.required">
                         User Name is REQUIRED!!!
                     </span>
                 </div>
-                <input id="email" class="form-control" formControlName="email" placeholder="Email (required)"
-                    required />
+                <input id="email" class="form-control" formControlName="email" placeholder="enter your emailId"
+                    (change)="validateEmail()" required />
                 <div class="help-block text-danger" *ngIf="email.touched">
                     <span *ngIf="email.errors?.required"> Email is REQUIRED!!! </span>
                 </div>
-                <input type="password" id="password" class="form-control" formControlName="password" required />
+                <input type="password" id="password" class="form-control" formControlName="password" required
+                    placeholder="enter your password" />
                 <div class="help-block text-danger" *ngIf="password.touched">
                     <span *ngIf="password.errors?.required"> password is REQUIRED!!! </span>
                 </div>
-                <button>Sign up</button>
+                <button [disabled]="!submitted">Sign up</button>
             </form>
         </div>
 
@@ -34,7 +35,7 @@
                 <div class="help-block text-danger" *ngIf="email2.touched">
                     <span *ngIf="email2.errors?.required"> email is required!!! </span>
                 </div>
-                <input type="password2" id="password2" class="form-control" formControlName="password2"
+                <input type="password" id="password2" class="form-control" formControlName="password2"
                     placeholder="enter your password" required />
                 <div class="help-block text-danger" *ngIf="password2.touched">
                     <span *ngIf="password2.errors?.required"> password is required!!! </span>

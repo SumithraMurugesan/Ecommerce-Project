@@ -1,5 +1,5 @@
 section {
-    padding:2rem 9%;
+    padding: 2rem 9%;
 }
 
 a {
@@ -11,6 +11,7 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
     gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .admin .box-container .box {
@@ -54,3 +55,31 @@ a {
     color: #eee;
     line-height: 1.8;
 }
+
+.row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        margin-left: 100%;
+        cursor: pointer;
+        border-radius: 10px;
+        background-color: black;
+    }

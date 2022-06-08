@@ -1,13 +1,16 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../service/api.service';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-add-products',
   templateUrl: './add-products.component.html',
   styleUrls: ['./add-products.component.css']
 })
-export class AddProductsComponent  {
+export class AddProductsComponent {
   addProduct: FormGroup;
 
 
@@ -23,7 +26,7 @@ export class AddProductsComponent  {
 
   };
   userData: any;
-  constructor(private fb: FormBuilder, private api: ApiService) {
+  constructor(private fb: FormBuilder, private api: ApiService, private toastr: ToastrService, private router:Router) {
     this.addProduct = this.fb.group({
       title: [this.userRecord.title],
       price: [this.userRecord.price],
@@ -36,7 +39,7 @@ export class AddProductsComponent  {
     });
   }
 
-  
+
   get title() {
     return this.addProduct.get('title')!;
   }
@@ -70,14 +73,16 @@ export class AddProductsComponent  {
       type: "product",
 
     };
-    this.api.add("testdb", productlist).subscribe(res => {
+    this.api.addProduct("testdb", productlist).subscribe(res => {
       console.log(res);
-      alert("Your product was created successfully!");
-
-    }, rej => {
-      alert("opps" + rej);
+      this.toastr.success("Your product was created successfully!")
+    }, err => {
+      console.log(err);
     });
 
   }
+  
+
+
 }
 

@@ -4,6 +4,8 @@ import { ApiService } from '../../service/api.service'
 import { CartComponent } from '../cart/cart.component';
 import { CartService } from '../../service/cart.service';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 
 
 @Component({
@@ -36,7 +38,7 @@ export class CheckoutFormComponent implements OnInit {
   grandTotal: any;
 
 
-  constructor(private fb: FormBuilder, private cartService: CartService, private api: ApiService, private cart: CartComponent, private router: Router) {
+  constructor(private fb: FormBuilder, private cartService: CartService, private api: ApiService, private cart: CartComponent, private router: Router, private toastr: ToastrService) {
     this.checkoutForm = this.fb.group({
       firstName: [this.userRecord.firstName],
       email: [this.userRecord.email],
@@ -136,7 +138,7 @@ export class CheckoutFormComponent implements OnInit {
     }
 
 
-    this.api.add("testdb", information).subscribe((res: any) => {
+    this.api.addInfo("testdb", information).subscribe((res: any) => {
       console.log(res);
       const oderId = res.id;
       let taskList: any = []
@@ -148,19 +150,19 @@ export class CheckoutFormComponent implements OnInit {
           "price": element['price'],
           "type": "orderInfo"
         }
-        taskList.push(this.api.add("testdb", orderInfo).subscribe((_res: any) => {
+        taskList.push(this.api.addInfo("testdb", orderInfo).subscribe((_res: any) => {
           return _res
         }))
 
       });
       Promise.all(taskList).then(result => {
-        console.log(result)
-        alert("Your order Placed Successfully!");
+        console.log("orderINfo", result)
+        this.toastr.success(" your order placed successfully!")
         this.router.navigate(['orderplaced'])
       })
 
-    }, rej => {
-      alert("opps" + rej);
+    }, err => {
+      console.log(err)
     });
 
   }

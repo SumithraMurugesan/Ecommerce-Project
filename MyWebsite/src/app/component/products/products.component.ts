@@ -18,20 +18,16 @@ export class ProductsComponent implements OnInit {
   constructor(private api: ApiService, private cartService: CartService) { }
 
   ngOnInit(): void {
-    const selector = {
-      "type": "product"
-    }
-    this.api.findApi(selector, "testdb")
+
+    this.api.findApi("product", "testdb")                                                                                                                                                                                                                                           
       .subscribe((res: any) => {
-        console.log(res);
-        this.productList = this.filterCategory = this.products = res['docs'];
+        console.log("response", res);
+        this.productList = this.filterCategory = this.products = res.rows.map((x: any) => x.doc)
+        console.log("productList", this.productList);
         console.log("filter", this.filterCategory);
-
         this.productList.forEach((a: any) => {
-
           Object.assign(a, { quantity: 1, total: a.price });
         });
-        console.log(this.productList)
       });
     this.cartService.search.subscribe((val: any) => {
       this.searchKey = val;
@@ -40,12 +36,11 @@ export class ProductsComponent implements OnInit {
   addtocart(item: any) {
     console.log("orderlist", item);
     this.cartService.addtoCart(item);
-
   }
   viewProduct(id: any) {
     this.api.getDataById("testdb", id).subscribe((res: any) => {
       console.log(res);
-      this.ProductView=res;
+      this.ProductView = res;
       this.cartService.viewProduct(this.ProductView);
     })
   }

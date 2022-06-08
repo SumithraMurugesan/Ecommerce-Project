@@ -13,6 +13,8 @@ import { ProductViewComponent } from './component/product-view/product-view.comp
 import { ProductsComponent } from './component/products/products.component';
 import { TrendingComponent } from './component/trending/trending.component';
 import { OrderPlacedComponent } from './order-placed/order-placed.component';
+import { ViewOrderDetailsComponent } from './view-order-details/view-order-details.component';
+import { ViewOrderProductsComponent } from './view-order-products/view-order-products.component';
 
 
 
@@ -28,10 +30,12 @@ const routes: Routes = [
   { path: 'cart', component: CartComponent },
   { path: 'checkout', component: CheckoutFormComponent },
   { path: 'login', component: LoginComponent },
-  {path:'loginform',component:LoginFormComponent},
-  {path:'admin',component:AdminComponent},
-  {path:'addproduct',component:AddProductsComponent},
-  {path:'orderplaced',component:OrderPlacedComponent}
+  { path: 'loginform', component: LoginFormComponent },
+  { path: 'admin', component: AdminComponent },
+  { path: 'addproduct', component: AddProductsComponent },
+  { path: 'orderplaced', component: OrderPlacedComponent },
+  { path: 'viewOrderDetails', component: ViewOrderDetailsComponent },
+  { path: 'viewOrderProducts', component: ViewOrderProductsComponent }
 ];
 
 

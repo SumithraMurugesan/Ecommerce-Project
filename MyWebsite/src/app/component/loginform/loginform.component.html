@@ -2,13 +2,13 @@
 
   <h1 class="heading"> <span>Login</span> Form </h1>
 
-  <form [formGroup]="loginForm" (ngSubmit)="saving(loginForm.value)" class="form">
+  <form [formGroup]="loginForm" (ngSubmit)="adminlogin(loginForm.value)" class="form">
     <div class="inputBox" [class.has-error]="userid?.invalid">
       <input type="text" placeholder="enter your userid" formControlName="userid" required>
       <div class="validator">
         <span class="text-danger"
           *ngIf="loginForm.controls['userid'].touched && loginForm.hasError('required','userid')">
-          *userid is required</span>
+          userid is required</span>
       </div>
     </div><br>
     <div class="inputBox" [class.has-error]="password?.invalid">

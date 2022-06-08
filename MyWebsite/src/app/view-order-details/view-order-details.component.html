@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="card-table">
+        <div class="cart-product">
+            <table class="table table-responsive">
+                <caption>Customer OrderDetails</caption>
+                <thead>
+                    <tr>
+                        <th>Sr.No</th>
+                        <th>firstName</th>
+                        <th>email</th>
+                        <th>address</th>
+                        <th>city</th>
+                        <th>state</th>
+                        <th>zip</th>
+                        <th>cname</th>
+                        <th>ccnum</th>
+                        <th>expmonth</th>
+                        <th>expyear</th>
+                        <th>cvv</th>
+                        <th>ViewOrderDetails</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr *ngFor="let item of viewOrderDetails; let i = index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.firstName}}</td>
+                        <td style="width: 25%;">{{item.email}}</td>
+                        <td style="width: 12%;">{{item.address}}</td>
+                        <td style="width: 12%;">{{item.city}}</td>
+                        <td style="width: 12%;">{{item.state}}</td>
+                        <td style="width: 12%;">{{item.zip}}</td>
+                        <td style="width: 12%;">{{item.cname}}</td>
+                        <td style="width: 12%;">{{item.ccnum}}</td>
+                        <td style="width: 12%;">{{item.expmonth}}</td>
+                        <td style="width: 12%;">{{item.expyear}}</td>
+                        <td style="width: 12%;">{{item.cvv}}</td>
+                        <td>
+                            <button (click)="orderInfo(item._id)" class="btn btn-danger"><em
+                                    class="fas fa-trash-alt"></em>OrderDetails</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
