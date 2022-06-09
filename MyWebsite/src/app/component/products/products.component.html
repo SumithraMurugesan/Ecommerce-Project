@@ -1,99 +1,61 @@
 <nav class="desktop-navigation-menu">
-
     <div class="container">
-
         <ul class="desktop-menu-category-list">
-
             <li class="menu-category">
                 <a href="home" class="menu-title">Home</a>
             </li>
-
             <li class="menu-category">
                 <a (click)="filter('')" class="menu-title">Categories</a>
-
             </li>
-
             <li class="menu-category">
                 <a (click)="filter('men')" class="menu-title">Men's</a>
-
-
             </li>
-
             <li class="menu-category">
                 <a (click)="filter('women')" class="menu-title">Women's</a>
-
             </li>
-
             <li class="menu-category">
                 <a (click)="filter('accessories')" class="menu-title">Accessories</a>
-
             </li>
-
             <li class="menu-category">
                 <a href="trending" class="menu-title">Trending</a>
-
             </li>
-
             <li class="menu-category">
                 <a href="newArrivals" class="menu-title">New Arrivals</a>
             </li>
-
             <li class="menu-category">
                 <a href="hotOffers" class="menu-title">Hot Offers</a>
             </li>
-
         </ul>
-
     </div>
-
 </nav>
-
-
 <div class="product-main">
-
     <h2 class="title">New Products</h2>
-
     <div class="product-grid">
         <ng-container *ngFor="let item of filterCategory | filter:searchKey:'title'">
-
             <div class="showcase">
-
                 <div class="showcase-banner">
-
                     <img src="{{item.image}}" alt="Mens Winter Leathers Jackets" class="product-img default">
                     <img src="{{item.image}}" alt="Mens Winter Leathers Jackets" width="100%" class="product-img hover">
-
-
                     <div class="showcase-actions">
-
                         <button class="btn-action">
                             <ion-icon name="heart-outline"></ion-icon>
                         </button>
-
                         <button class="btn-action" routerLink="/productView">
                             <ion-icon name="eye-outline" (click)=viewProduct(item._id)></ion-icon>
                         </button>
-
                         <button class="btn-action">
                             <ion-icon name="repeat-outline"></ion-icon>
                         </button>
-
                         <button class="btn-action">
                             <ion-icon name="bag-add-outline" (click)=addtocart(item)></ion-icon>
                         </button>
-
                     </div>
-
                 </div>
-
                 <div class="showcase-content">
-
                     <a href="#" class="showcase-category">{{item.title}}</a>
-
                     <a href="#">
                         <h3 class="showcase-title">{{item.description}}</h3>
                     </a>
-
                     <div class="showcase-rating">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -101,22 +63,13 @@
                         <ion-icon name="star-outline"></ion-icon>
                         <ion-icon name="star-outline"></ion-icon>
                     </div>
-
                     <div class="price-box">
                         <p class="price">{{item.price}}</p>
                         <del>$75.00</del>
                     </div>
-
                 </div>
-
             </div>
-
         </ng-container>
-
-
-
-
     </div>
-
 </div>
 <app-footer></app-footer>

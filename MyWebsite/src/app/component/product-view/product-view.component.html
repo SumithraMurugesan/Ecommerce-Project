@@ -1,18 +1,11 @@
 <div class="product-featured">
-
-
     <div class="showcase-wrapper has-scrollbar">
-
         <div class="showcase-container">
-
             <div class="showcase" *ngFor="let item of products">
-
                 <div class="showcase-banner">
                     <img src="{{item.image}}" alt="Rose Gold diamonds Earring" class="showcase-img" width="100%">
                 </div>
-
                 <div class="showcase-content">
-
                     <div class="showcase-rating">
                         <ion-icon name="star"></ion-icon>
                         <ion-icon name="star"></ion-icon>
@@ -20,40 +13,26 @@
                         <ion-icon name="star-outline"></ion-icon>
                         <ion-icon name="star-outline"></ion-icon>
                     </div>
-
                     <h3 class="showcase-title">
                         <a href="#" class="showcase-title">{{item.title}}</a>
                     </h3>
-
                     <p class="showcase-desc">
                         {{item.description}}
                     </p>
-
                     <div class="price-box">
                         <p class="price">{{item.price}}</p>
                         <del>$75</del>
                     </div>
-
                     <button class="add-cart-btn" (click)=addtocart(item)>add to cart</button>
-
                     <div class="showcase-status">
                         <div class="wrapper">
                             <p> already sold: <strong>15</strong> </p>
-
                             <p> available: <strong>40</strong> </p>
                         </div>
-
                         <div class="showcase-status-bar"></div>
                     </div>
-
-
-
                 </div>
-
             </div>
-
         </div>
-
     </div>
-
 </div>

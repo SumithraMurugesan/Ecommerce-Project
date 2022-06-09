@@ -1,31 +1,20 @@
 <header>
     <div class="header-main">
-
         <div class="container">
-
             <a href="products" class="header-logo">
                 <img src="./assets/images/logo/logo.svg" alt="Anon's logo" width="120" height="36">
             </a>
-
             <div class="header-search-container">
-
                 <input type="search" name="search" class="search-field" placeholder="Enter your product name..."
                     [(ngModel)]="searchTerm" (keyup)="search($event)">
-
                 <button class="search-btn">
                     <ion-icon name="search-outline"></ion-icon>
                 </button>
-
             </div>
-
             <div class="header-user-actions">
-
                 <button class="action-btn">
                     <ion-icon name="person-outline" routerLink="login"></ion-icon>
                 </button>
-
-               
-
                 <button class="action-btn">
                     <ion-icon name="bag-handle-outline" routerLink="cart"></ion-icon>
                     <span class="count">{{totalItem}}</span>
@@ -34,16 +23,9 @@
                     <ion-icon name="person-circle-outline"></ion-icon>
                 </button>
                 <button class="action-btn" (click)="logout()">
-                <ion-icon name="log-out-outline"></ion-icon>
-            </button>
-
+                    <ion-icon name="log-out-outline"></ion-icon>
+                </button>
             </div>
-
         </div>
-
     </div>
-
-
-
-
 </header>

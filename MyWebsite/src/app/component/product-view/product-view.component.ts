@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from 'src/app/service/cart.service';
-
 @Component({
   selector: 'app-product-view',
   templateUrl: './product-view.component.html',
@@ -8,9 +7,7 @@ import { CartService } from 'src/app/service/cart.service';
 })
 export class ProductViewComponent implements OnInit {
   products: any;
-
   constructor(private cartService: CartService) { }
-
   ngOnInit(): void {
     this.cartService.display()
       .subscribe((res: any) => {
@@ -21,7 +18,5 @@ export class ProductViewComponent implements OnInit {
     console.log("orderlist", item);
     this.cartService.addtoCart(item);
   }
-
-
 }
 

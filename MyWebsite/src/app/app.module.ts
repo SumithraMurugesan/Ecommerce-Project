@@ -4,7 +4,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './shared/filter.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './component/home/home.component';
@@ -56,7 +55,6 @@ import { ViewOrderProductsComponent } from './view-order-products/view-order-pro
     FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
-
   ],
   providers: [CartComponent, {
     provide: HTTP_INTERCEPTORS,

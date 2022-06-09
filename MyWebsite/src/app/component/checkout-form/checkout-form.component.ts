@@ -6,17 +6,14 @@ import { CartService } from '../../service/cart.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
-
-
 @Component({
   selector: 'app-checkout-form',
   templateUrl: './checkout-form.component.html',
   styleUrls: ['./checkout-form.component.css']
 })
+
 export class CheckoutFormComponent implements OnInit {
   checkoutForm!: FormGroup;
-
-
   userRecord: any = {
     firstName: '',
     email: '',
@@ -30,14 +27,11 @@ export class CheckoutFormComponent implements OnInit {
     expyear: '',
     cvv: '',
     type: "order",
-
-
   };
+
   userData: any;
   products = [];
   grandTotal: any;
-
-
   constructor(private fb: FormBuilder, private cartService: CartService, private api: ApiService, private cart: CartComponent, private router: Router, private toastr: ToastrService) {
     this.checkoutForm = this.fb.group({
       firstName: [this.userRecord.firstName],
@@ -54,11 +48,6 @@ export class CheckoutFormComponent implements OnInit {
       type: [this.userRecord.type]
     });
   }
-
-
-
-
-
   ngOnInit(): void {
     this.checkoutForm = this.fb.group({
       firstName: ['', [Validators.required,]],
@@ -80,11 +69,9 @@ export class CheckoutFormComponent implements OnInit {
         this.grandTotal = this.cartService.getTotalPrice();
       })
   }
-
   get firstName() {
     return this.checkoutForm.get('firstName')!;
   }
-
   get email() {
     return this.checkoutForm.get('email')!;
   }
@@ -116,7 +103,6 @@ export class CheckoutFormComponent implements OnInit {
     return this.checkoutForm.get('cvv')!;
   }
 
-
   order(Formvalue: any) {
     const userData = JSON.parse(localStorage.getItem('obj1') || '{}');
     console.log(userData);
@@ -134,9 +120,7 @@ export class CheckoutFormComponent implements OnInit {
       "cvv": Formvalue.cvv,
       type: "order",
       user: userData.id,
-
     }
-
 
     this.api.addInfo("testdb", information).subscribe((res: any) => {
       console.log(res);
@@ -153,18 +137,15 @@ export class CheckoutFormComponent implements OnInit {
         taskList.push(this.api.addInfo("testdb", orderInfo).subscribe((_res: any) => {
           return _res
         }))
-
       });
       Promise.all(taskList).then(result => {
         console.log("orderINfo", result)
         this.toastr.success(" your order placed successfully!")
         this.router.navigate(['orderplaced'])
       })
-
     }, err => {
       console.log(err)
     });
-
   }
 }
 

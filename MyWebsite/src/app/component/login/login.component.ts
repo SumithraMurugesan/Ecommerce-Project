@@ -13,13 +13,12 @@ export class LoginComponent {
   signUpForm: FormGroup;
   submitted = false;
   loginForm: FormGroup;
+
   obj1: any = {
     userName: '',
     email: '',
     password: '',
   };
-
-
 
   userRecord1: any = {
     userName: '',
@@ -27,23 +26,18 @@ export class LoginComponent {
     password: '',
 
   };
+
   userRecord2: any = {
     email2: '',
     password2: '',
 
   };
-
-
-
   constructor(private fb: FormBuilder, private api: ApiService, private router: Router,
     private toastr: ToastrService) {
-
-
     this.signUpForm = this.fb.group({
       userName: [this.userRecord1.userName],
       email: [this.userRecord1.email],
       password: [this.userRecord1.password],
-
     });
     this.loginForm = this.fb.group({
       email2: [this.userRecord2.email2],
@@ -51,10 +45,6 @@ export class LoginComponent {
 
     });
   }
-
-
-
-
   get userName() {
     return this.signUpForm.get('userName')!;
   }
@@ -79,6 +69,8 @@ export class LoginComponent {
     this.api.signUpData(Formvalue).subscribe((data) => {
       console.log("data returned from server", data);
       this.toastr.success(data.message);
+    }, err => {
+      console.error(err)
     })
   }
 
@@ -100,10 +92,7 @@ export class LoginComponent {
     }, err => {
       console.error(err)
     })
-
   }
-
-
   login(Formvalue: any) {
     let datas = {
       email: Formvalue.email2,
@@ -126,7 +115,6 @@ export class LoginComponent {
         }
       }
     })
-    localStorage.clear();
   }
 }
 

@@ -11,9 +11,7 @@ import { CartService } from 'src/app/service/cart.service';
 export class HeaderComponent implements OnInit {
   public totalItem: number = 0;
   public searchTerm !: string;
-
-  constructor(private cartService: CartService,public router:Router) { }
-
+  constructor(private cartService: CartService, public router: Router) { }
   ngOnInit(): void {
     this.cartService.getProducts()
       .subscribe(res => {
@@ -25,9 +23,8 @@ export class HeaderComponent implements OnInit {
     console.log(this.searchTerm);
     this.cartService.search.next(this.searchTerm);
   }
-  adminNavigate(){
+  adminNavigate() {
     this.router.navigate(['/loginform'])
-
   }
   logout() {
     localStorage.clear();

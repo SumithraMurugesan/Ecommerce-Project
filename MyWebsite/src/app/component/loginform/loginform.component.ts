@@ -4,7 +4,6 @@ import { ApiService } from '../../service/api.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
-
 @Component({
   selector: 'app-loginform',
   templateUrl: './loginform.component.html',
@@ -12,14 +11,11 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginFormComponent implements OnInit {
   loginForm!: FormGroup;
-
   constructor(private fb: FormBuilder, private api: ApiService, private router: Router, private toastr: ToastrService) { }
-
   ngOnInit(): void {
     this.loginForm = this.fb.group({
       userid: ['', Validators.required],
       password: ['', Validators.required],
-
     });
   }
   get userid() {
@@ -28,7 +24,6 @@ export class LoginFormComponent implements OnInit {
   get password() {
     return this.loginForm.get('password');
   }
-
   adminlogin(Formvalue: any) {
 
     console.log("from form", Formvalue);

@@ -1,7 +1,6 @@
 <div class="container">
     <div class="main">
         <input type="checkbox" id="chk" aria-hidden="true">
-
         <div class="signup">
             <form [formGroup]="signUpForm" (ngSubmit)="signUp(this.signUpForm.value)">
                 <label for="chk" aria-hidden="true">Sign up</label>
@@ -25,7 +24,6 @@
                 <button [disabled]="!submitted">Sign up</button>
             </form>
         </div>
-
         <div class="login">
             <form [formGroup]="loginForm" (ngSubmit)="login(this.loginForm.value)">
 

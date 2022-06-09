@@ -8,18 +8,14 @@ import { CartService } from 'src/app/service/cart.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
   public products: any;
   public productList: any;
-
   public filterCategory: any
   searchKey: string = "";
   ProductView: any;
   constructor(private api: ApiService, private cartService: CartService) { }
-
   ngOnInit(): void {
-
-    this.api.findApi("product", "testdb")                                                                                                                                                                                                                                           
+    this.api.findApi("product", "testdb")
       .subscribe((res: any) => {
         console.log("response", res);
         this.productList = this.filterCategory = this.products = res.rows.map((x: any) => x.doc)
@@ -44,8 +40,6 @@ export class ProductsComponent implements OnInit {
       this.cartService.viewProduct(this.ProductView);
     })
   }
-
-
   filter(category: string) {
     this.filterCategory = this.productList
       .filter((a: any) => {
@@ -54,5 +48,4 @@ export class ProductsComponent implements OnInit {
         }
       })
   }
-
 }

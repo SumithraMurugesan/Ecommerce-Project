@@ -37,8 +37,6 @@ export class ApiService {
       return this.http.post(url,selectorData,this.httpOptions)
       }
 
-  
-
   addProduct(db: string, doc: object): Observable<{}> {
     console.log(doc);
     const url = this.url + db;
@@ -59,6 +57,7 @@ export class ApiService {
   login_get(id: any) {
     return this.http.post<any>('http://localhost:8000/getdata/' , id);
   }
+
   findApi(selectedObject: any, dataBase: string) {
     const url = `${this.url + dataBase}/_design/product/_view/productview?include_docs=true&keys=["${selectedObject}"]` 
     return this.http.get(url, this.httpOptions)
@@ -68,6 +67,7 @@ export class ApiService {
     const url = `${this.url + dataBase}/_all_docs?include_docs=true` 
     return this.http.post(url, selectedObject,this.httpOptions)
   }
+
   orderProduct(order_id: any, database: string) {
     const url = `${this.url + database}/_find`;
     const selectorObject = {
@@ -78,7 +78,6 @@ export class ApiService {
     }
     return this.http.post(url, selectorObject, this.httpOptions);
   }
-
 }
 
 

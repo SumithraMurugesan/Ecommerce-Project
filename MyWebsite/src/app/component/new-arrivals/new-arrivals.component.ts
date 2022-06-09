@@ -6,7 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./new-arrivals.component.css']
 })
 export class NewArrivalsComponent {
-
-
-
 }

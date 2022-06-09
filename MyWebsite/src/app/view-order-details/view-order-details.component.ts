@@ -9,7 +9,7 @@ import { ApiService } from '../service/api.service';
 })
 export class ViewOrderDetailsComponent implements OnInit {
   viewOrderDetails: any;
-
+  
   constructor(private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {

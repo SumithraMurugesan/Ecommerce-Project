@@ -3,8 +3,6 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 import { ApiService } from '../../service/api.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
-
-
 @Component({
   selector: 'app-add-products',
   templateUrl: './add-products.component.html',
@@ -12,8 +10,6 @@ import { Router } from '@angular/router';
 })
 export class AddProductsComponent {
   addProduct: FormGroup;
-
-
   userRecord: any = {
     title: '',
     price: '',
@@ -22,10 +18,8 @@ export class AddProductsComponent {
     image: '',
     category: '',
     type: 'product',
-
-
   };
-  constructor(private fb: FormBuilder, private api: ApiService, private toastr: ToastrService, private router:Router) {
+  constructor(private fb: FormBuilder, private api: ApiService, private toastr: ToastrService, private router: Router) {
     this.addProduct = this.fb.group({
       title: [this.userRecord.title],
       price: [this.userRecord.price],
@@ -34,11 +28,8 @@ export class AddProductsComponent {
       image: [this.userRecord.image],
       category: [this.userRecord.category],
       type: [this.userRecord.type]
-
     });
   }
-
-
   get title() {
     return this.addProduct.get('title')!;
   }
@@ -53,13 +44,8 @@ export class AddProductsComponent {
   }
   get category() {
     return this.addProduct.get('category');
-
   }
-
-
-
   addProducts(Formvalue: any) {
-
     const productlist = {
       "title": Formvalue.title,
       "price": Formvalue.price,
@@ -68,7 +54,6 @@ export class AddProductsComponent {
       "image": Formvalue.image,
       "category": Formvalue.category,
       type: "product",
-
     };
     this.api.addProduct("testdb", productlist).subscribe(res => {
       console.log(res);
@@ -76,10 +61,6 @@ export class AddProductsComponent {
     }, err => {
       console.log(err);
     });
-
   }
-  
-
-
 }
 

@@ -16,10 +16,6 @@ import { OrderPlacedComponent } from './order-placed/order-placed.component';
 import { ViewOrderDetailsComponent } from './view-order-details/view-order-details.component';
 import { ViewOrderProductsComponent } from './view-order-products/view-order-products.component';
 
-
-
-
-
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'hotOffers', component: HotOffersComponent },
@@ -37,7 +33,6 @@ const routes: Routes = [
   { path: 'viewOrderDetails', component: ViewOrderDetailsComponent },
   { path: 'viewOrderProducts', component: ViewOrderProductsComponent }
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
