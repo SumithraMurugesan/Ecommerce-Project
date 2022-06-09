@@ -21,10 +21,10 @@ export class ViewOrderProductsComponent implements OnInit {
       this.api.orderProduct(data, "testdb")
         .subscribe((res: any) => {
           this.viewOrderProduct = res.docs
-          const product_ids = this.viewOrderProduct.map((res: any) => res['product']);
+          const product_ids = this.viewOrderProduct.map((res1: any) => res1['product']);
           this.api.alldocsapi({ keys: product_ids }, "testdb").subscribe((result: any) => {
             console.log(result)
-            const lkpData = result.rows.map((res1: any) => res1['doc']);
+            const lkpData = result.rows.map((res2: any) => res2['doc']);
             this.viewOrderProduct.forEach((element: any) => {
               element['productData'] = lkpData.filter((lkp: any) => lkp['_id'] === element['product'])[0]
             });
