@@ -24,7 +24,7 @@ export class ViewOrderProductsComponent implements OnInit {
           const product_ids = this.viewOrderProduct.map((res: any) => res['product']);
           this.api.alldocsapi({ keys: product_ids }, "testdb").subscribe((result: any) => {
             console.log(result)
-            const lkpData = result.rows.map((res: any) => res['doc']);
+            const lkpData = result.rows.map((res1: any) => res1['doc']);
             this.viewOrderProduct.forEach((element: any) => {
               element['productData'] = lkpData.filter((lkp: any) => lkp['_id'] === element['product'])[0]
             });
@@ -33,11 +33,5 @@ export class ViewOrderProductsComponent implements OnInit {
         });
     })
   }
-  getTotalPrice(): number {
-    let grandTotal = 0;
-    this.viewOrderProduct.map((a: any) => {
-      grandTotal += a.total;
-    })
-    return grandTotal;
-  }
+ 
 }
