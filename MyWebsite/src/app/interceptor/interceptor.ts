@@ -22,10 +22,10 @@ export class HttpCallInterceptor implements HttpInterceptor {
           this.toastr.error(err.error.reason)
         }
         else if (err.error.message) {
-          this.toastr.error(err.error.error.reason);
+          this.toastr.error(err.error.message);
         }
         else {
-          this.toastr.error(err.error.message);
+          this.toastr.error(err.error.error.reason);
         }
       })
     )

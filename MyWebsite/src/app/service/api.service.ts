@@ -22,20 +22,20 @@ export class ApiService {
 
   adminData(formData: any) {
     console.log("From api", formData);
-    return this.http.post<any>('http://localhost:8000/postdata4/', formData)
+    return this.http.post<any>('http://localhost:8000/postdata4', formData)
   }
   signUpData(formData: any) {
     console.log("From api", formData);
-    return this.http.post<any>('http://localhost:8000/postdata2/', formData)
+    return this.http.post<any>('http://localhost:8000/postdata2', formData)
   }
-  dataBaseName ="testdb";
-    emailValidation(query:any){
-      const url = `${this.url+this.dataBaseName}/_find`;
-      const selectorData = {
-        selector:query
-      }
-      return this.http.post(url,selectorData,this.httpOptions)
-      }
+  dataBaseName = "testdb";
+  emailValidation(query: any) {
+    const url = `${this.url + this.dataBaseName}/_find`;
+    const selectorData = {
+      selector: query
+    }
+    return this.http.post(url, selectorData, this.httpOptions)
+  }
 
   addProduct(db: string, doc: object): Observable<{}> {
     console.log(doc);
@@ -55,17 +55,17 @@ export class ApiService {
   }
 
   login_get(id: any) {
-    return this.http.post<any>('http://localhost:8000/getdata/' , id);
+    return this.http.post<any>('http://localhost:8000/getdata/', id);
   }
 
   findApi(selectedObject: any, dataBase: string) {
-    const url = `${this.url + dataBase}/_design/product/_view/productview?include_docs=true&keys=["${selectedObject}"]` 
+    const url = `${this.url + dataBase}/_design/product/_view/productview?include_docs=true&keys=["${selectedObject}"]`
     return this.http.get(url, this.httpOptions)
   }
 
   alldocsapi(selectedObject: any, dataBase: string) {
-    const url = `${this.url + dataBase}/_all_docs?include_docs=true` 
-    return this.http.post(url, selectedObject,this.httpOptions)
+    const url = `${this.url + dataBase}/_all_docs?include_docs=true`
+    return this.http.post(url, selectedObject, this.httpOptions)
   }
 
   orderProduct(order_id: any, database: string) {

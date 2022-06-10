@@ -69,6 +69,7 @@ export class LoginComponent {
     this.api.signUpData(Formvalue).subscribe((data) => {
       console.log("data returned from server", data);
       this.toastr.success(data.message);
+      this.signUpForm.reset();
     }, err => {
       console.error(err)
     })

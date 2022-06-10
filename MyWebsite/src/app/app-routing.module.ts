@@ -17,6 +17,7 @@ import { ViewOrderDetailsComponent } from './view-order-details/view-order-detai
 import { ViewOrderProductsComponent } from './view-order-products/view-order-products.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'hotOffers', component: HotOffersComponent },
   { path: 'trending', component: TrendingComponent },

@@ -12,7 +12,7 @@ export class CartService {
   public viewProducts: any = []
   viewProductList = new BehaviorSubject<any>([]);
 
- 
+
   getProducts() {
     return this.productList.asObservable();
   }
@@ -41,7 +41,7 @@ export class CartService {
   }
   removeCartItem(product: any) {
     this.cartItemList.map((a: any, index: any) => {
-      if (product.id === a.id) {
+      if (product._id === a._id) {
         this.cartItemList.splice(index, 1);
       }
     })

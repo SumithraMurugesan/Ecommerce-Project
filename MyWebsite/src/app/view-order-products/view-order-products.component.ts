@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../service/api.service';
 
 @Component({
@@ -11,7 +11,7 @@ export class ViewOrderProductsComponent implements OnInit {
   dataset: any;
   viewOrderProduct: any;
 
-  constructor(public active: ActivatedRoute, private api: ApiService) { }
+  constructor(public active: ActivatedRoute, private api: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.active.queryParams.subscribe(data => {
@@ -33,5 +33,8 @@ export class ViewOrderProductsComponent implements OnInit {
         });
     })
   }
- 
+  back() {
+    this.router.navigate(['/admin']);
+  }
+
 }

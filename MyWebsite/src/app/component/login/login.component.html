@@ -21,7 +21,7 @@
                 <div class="help-block text-danger" *ngIf="password.touched">
                     <span *ngIf="password.errors?.required"> password is REQUIRED!!! </span>
                 </div>
-                <button [disabled]="!submitted">Sign up</button>
+                <button  (click)="validateEmail()">Sign up</button>
             </form>
         </div>
         <div class="login">

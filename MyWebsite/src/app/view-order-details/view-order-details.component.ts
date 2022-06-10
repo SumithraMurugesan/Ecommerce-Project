@@ -26,5 +26,8 @@ export class ViewOrderDetailsComponent implements OnInit {
       { queryParams: { orderid: id } }
     );
   }
+  back() {
+    this.router.navigate(['/admin']);
+  }
 
 }

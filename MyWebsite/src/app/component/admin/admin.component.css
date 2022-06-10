@@ -1,22 +1,26 @@
 section {
     padding: 2rem 9%;
 }
+
 a {
     text-decoration: none;
     appearance: none;
 }
+
 .admin .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
     gap: 1rem;
     margin-bottom: 1rem;
 }
+
 .admin .box-container .box {
     border-radius: 0.5rem;
     background: #333;
     text-align: center;
     padding: 1rem;
 }
+
 .admin .box-container .box:hover {
     border-radius: 0.5rem;
     /* background: #333; */
@@ -24,10 +28,12 @@ a {
     padding: 2.5rem;
     background: var(--main-color);
 }
+
 .admin .box-container .box h3:hover {
     color: black;
     font-size: 2rem;
 }
+
 .admin .box-container .box i {
     height: 6rem;
     width: 4rem;
@@ -37,35 +43,49 @@ a {
     background: var(--main-color);
     color: #fff;
 }
+
 .admin .box-container .box h3 {
     font-size: 2rem;
     color: #fff;
     padding: 1rem 0;
 }
+
 .admin .box-container .box p {
     font-size: 1.4rem;
     color: #eee;
     line-height: 1.8;
 }
-.row.content {height: 550px}
-    .sidenav {
-      background-color: #f1f1f1;
-      height: 100%;
+
+.row.content {
+    height: 550px
+}
+
+.sidenav {
+    background-color: #f1f1f1;
+    height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+    .row.content {
+        height: auto;
     }
-    @media screen and (max-width: 767px) {
-      .row.content {height: auto;} 
-    }
-    .button {
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        padding: 15px 32px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        margin-left: 100%;
-        cursor: pointer;
-        border-radius: 10px;
-    }
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.btn-dark {
+    margin-left: 85%;
+}

@@ -33,7 +33,10 @@ export class LoginFormComponent implements OnInit {
         this.toastr.success("login sucessfully!");
         this.router.navigate(['admin']);
       }
-      console.log("data returned from server", data);
+      else {
+        console.log("data returned from server");
+        this.toastr.error("failed to login");
+      }
     })
   }
 }

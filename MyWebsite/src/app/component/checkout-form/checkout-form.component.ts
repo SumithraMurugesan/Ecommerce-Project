@@ -13,7 +13,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 
 export class CheckoutFormComponent implements OnInit {
-  checkoutForm!: FormGroup;
+  checkoutForm: FormGroup;
   userRecord: any = {
     firstName: '',
     email: '',
@@ -32,6 +32,8 @@ export class CheckoutFormComponent implements OnInit {
   userData: any;
   products = [];
   grandTotal: any;
+  totalItem: any;
+  userId: any;
   constructor(private fb: FormBuilder, private cartService: CartService, private api: ApiService, private cart: CartComponent, private router: Router, private toastr: ToastrService) {
     this.checkoutForm = this.fb.group({
       firstName: [this.userRecord.firstName],
@@ -105,7 +107,8 @@ export class CheckoutFormComponent implements OnInit {
 
   order(Formvalue: any) {
     const userData = JSON.parse(localStorage.getItem('obj1') || '{}');
-    console.log(userData);
+    this.userId = userData['_id'];
+    console.log(this.userId);
     const information = {
       "firstName": Formvalue.firstName,
       "email": Formvalue.email,
@@ -119,9 +122,9 @@ export class CheckoutFormComponent implements OnInit {
       "expyear": Formvalue.expyear,
       "cvv": Formvalue.cvv,
       type: "order",
-      user: userData.id,
+      user: this.userId,
     }
-
+    this.checkoutForm.reset();
     this.api.addInfo("testdb", information).subscribe((res: any) => {
       console.log(res);
       const oderId = res.id;
@@ -142,6 +145,7 @@ export class CheckoutFormComponent implements OnInit {
         console.log("orderINfo", result)
         this.toastr.success(" your order placed successfully!")
         this.router.navigate(['orderplaced'])
+        this.cartService.removeAllCart();
       })
     }, err => {
       console.log(err)

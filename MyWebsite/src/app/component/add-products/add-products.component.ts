@@ -57,10 +57,14 @@ export class AddProductsComponent {
     };
     this.api.addProduct("testdb", productlist).subscribe(res => {
       console.log(res);
+      this.addProduct.reset();
       this.toastr.success("Your product was created successfully!")
     }, err => {
       console.log(err);
     });
+  }
+  back(){
+    this.router.navigate(['/admin']);
   }
 }
 
