@@ -85,11 +85,9 @@ export class LoginComponent {
       console.log(response)
       if (response.docs.length > 1) {
         this.toastr.error("email already exist");
-        this.submitted = false;
+  
       }
-      else {
-        this.submitted = true;
-      }
+    
     }, err => {
       console.error(err)
     })

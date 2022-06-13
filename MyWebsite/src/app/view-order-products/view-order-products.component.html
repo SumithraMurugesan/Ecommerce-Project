@@ -19,15 +19,13 @@
                         <td>{{item.productData.title}}</td>
                         <td><img style="width: 120px;" src="{{item.productData.image}}" alt=""></td>
                         <td style="width: 25%;">{{item.productData.description}}</td>
-                        <td style="width: 12%;">{{item.price}}</td>
+                        <td style="width: 12%;">₹{{item.price}}</td>
                         <td style="width: 12%;">{{item.quantity}}</td>
-                        <td style="width: 12%;">{{item.total}}</td>
                     </tr>
-                <tr>
-                    <button type="button" (click)="back()" class="btn btn-dark">back</button>
-                </tr>
                 </tbody>
             </table>
+            <button type="button" (click)="back()" class="btn btn-dark">back</button>
+
         </div>
     </div>
 </div>
