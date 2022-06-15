@@ -1,16 +1,17 @@
-<section class="login" id="login">
-  <h1 class="heading"> <span>Admin</span> Login </h1>
+<section class="main-container" id="login">
+  <div class="box">
+  <h2>Login </h2>
   <form [formGroup]="loginForm" (ngSubmit)="adminlogin(loginForm.value)" class="form">
     <div class="inputBox" [class.has-error]="userid?.invalid">
-      <input type="text" placeholder="enter your userid" formControlName="userid" required>
+      <input type="text" placeholder="User Name" formControlName="userid" required>
       <div class="validator">
         <span class="text-danger"
           *ngIf="loginForm.controls['userid'].touched && loginForm.hasError('required','userid')">
-          userid is required</span>
+          *username is required</span>
       </div>
     </div><br>
     <div class="inputBox" [class.has-error]="password?.invalid">
-      <input type="password" placeholder="enter your password" formControlName="password" required>
+      <input type="password" placeholder="Password" formControlName="password" required>
       <div class="validator">
         <span class="text-danger"
           *ngIf="loginForm.controls['password'].touched && loginForm.hasError('required','password')">
@@ -19,4 +20,5 @@
     </div>
     <button type="submit" class="btn">Login</button>
   </form>
+</div>
 </section>

@@ -50,6 +50,8 @@ export class CheckoutFormComponent implements OnInit {
       type: [this.userRecord.type]
     });
   }
+
+
   ngOnInit(): void {
     this.checkoutForm = this.fb.group({
       firstName: ['', [Validators.required,]],
@@ -57,7 +59,7 @@ export class CheckoutFormComponent implements OnInit {
       address: ['', [Validators.required,]],
       city: ['', [Validators.required,]],
       state: ['', [Validators.required,]],
-      zip: ['', [Validators.required,]],
+      zip: ['', [Validators.required, Validators.maxLength(5)]],
       cname: ['', [Validators.required,]],
       ccnum: ['', [Validators.required,]],
       expmonth: ['', [Validators.required,]],

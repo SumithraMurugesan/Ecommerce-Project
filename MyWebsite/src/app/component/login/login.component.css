@@ -7,16 +7,18 @@
     min-height: 100vh;
     min-width: 100%;
     font-family: 'Jost', sans-serif;
-    background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    background-image: url(https://st4.depositphotos.com/4278641/21066/i/1600/depositphotos_210664512-stock-photo-fashionable-women-clothes-accessories-perfume.jpg);
+    /* background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e); */
 }
 
 .main {
     width: 350px;
     height: 500px;
-    background: hsl(353, 100%, 78%);
+    background: hsl(348, 93%, 82%);
+    opacity: 85%;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: 5px 20px 50px #000;
+    box-shadow: 5px 20px 50px #faafaf;
 }
 
 #chk {

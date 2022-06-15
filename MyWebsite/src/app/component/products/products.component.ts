@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ApiService } from 'src/app/service/api.service';
 import { CartService } from 'src/app/service/cart.service';
 
@@ -13,7 +14,7 @@ export class ProductsComponent implements OnInit {
   public filterCategory: any
   searchKey: string = "";
   ProductView: any;
-  constructor(private api: ApiService, private cartService: CartService) { }
+  constructor(private api: ApiService, private cartService: CartService , private toastr :ToastrService) { }
   ngOnInit(): void {
     this.api.findApi("product", "testdb")
       .subscribe((res: any) => {
@@ -32,6 +33,8 @@ export class ProductsComponent implements OnInit {
   addtocart(item: any) {
     console.log("orderlist", item);
     this.cartService.addtoCart(item);
+    this.toastr.success("your product added to cart successfully");
+    
   }
   viewProduct(id: any) {
     this.api.getDataById("testdb", id).subscribe((res: any) => {
