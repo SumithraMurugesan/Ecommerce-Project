@@ -89,7 +89,7 @@
   background: transparent;
   border: none;
   outline: none;
-  background: hsl(342, 92%, 79%);
+  background-color: hsl(342, 92%, 79%);
   color: #fff;
   padding: 10px 20px;
   margin-top: 1rem;
